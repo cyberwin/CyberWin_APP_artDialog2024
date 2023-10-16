@@ -1,4 +1,5 @@
 # 未来之窗web网页弹窗对话框
+![输入图片说明](https://foruda.gitee.com/images/1697472774781345148/a7f8ccf4_16110.jpeg)
 
 #### 介绍
 网页弹窗，独立使用单文件版本，可指定位置，左上，左下，中间，右侧，下册，左侧，右侧，顶部，底部。支持拖动开关，标题显示开关，支持同时多个弹窗，支持遮罩和非遮罩，弹窗支持透明度
@@ -19,20 +20,14 @@
 #### 使用说明
 
 	CyberWin_Dialog.open('设备未授权','<img src="'+qrimgurl+'" style="width:250px;"><br>请微信扫码绑定',"同意","不同意");
+	CyberWin_Dialog.layer(url,{type:"url",title:"找回密码",width:"450px",height:"480px",align:59,id:"wlzc_arg_notice"});
 
 #### 参与贡献
 
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
+1.  cybersnow
+2.  未来之窗
+3 
 
 
 #### 特技
-
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+ 
