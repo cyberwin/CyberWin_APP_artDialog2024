@@ -24,6 +24,7 @@
 //2023-8-17 增加输入
 //cyberwin_arg_input_0D3EB0CDBBA6A535543A5E7714DA67E6
 //2023-10-16 增减屏幕宽度初始化
+//2023-11-8 增加收缩窗口  fold
 ; !
 function() {
     
@@ -370,6 +371,10 @@ function() {
 		var 未来之窗_layer_hidetitle = false;
 		var 未来之窗_layer_alpha = 1;
 
+		//2023-11-8
+		//fold
+		var  未来之窗_layer_fold = "N";//非折叠
+
 		//未来之窗回调
 		var 未来之窗_layer_callback = function(){ 
 			/*不执行*/
@@ -432,6 +437,12 @@ function() {
 		if(cyberwin_obj.callback){
 			未来之窗_layer_callback=cyberwin_obj.callback;
 		}
+
+		//未来之窗_layer_fold
+		if(cyberwin_obj.fold){
+			未来之窗_layer_fold=cyberwin_obj.fold;
+		}
+
 
 		//var 未来之窗_layer_can_movedialog = true;
 
@@ -559,14 +570,21 @@ function() {
 				break;
 			 case 2:
 			{
+				 //右上角
+				 未来之窗_layer_alignmentstyle="top: 0 px;right: 0px;";
 			}
 				break;
 				case 3:
 			{
+					//左边中间
+					var hight_ =parseFloat(CyberWin_Dialog_screen_height - height_layer)/2;
+					未来之窗_layer_alignmentstyle="top: "+hight_+"px;left: 0px;";
 			}
 				break;
 				case 4:
 			{
+					//左上角
+					未来之窗_layer_alignmentstyle="top: 0 px;left: 0px;";
 			}
 				break;
 				case 5:
@@ -583,6 +601,8 @@ function() {
 				break;
 				case 6:
 			{
+					//右下角
+					 未来之窗_layer_alignmentstyle="bottom: 0 px;right: 0px;";
 			}
 				break;
 				case 7:
@@ -741,6 +761,12 @@ function() {
 		   }else{
 			   document.getElementById(未来之窗_layer_id).style.border="0 solid #000000"; 
 		   }
+
+		}
+
+		if(未来之窗_layer_fold == "Y"){
+			 $("#"+未来之窗_layer_id).addClass("cyberwin_dialog_hide_body_20230811");
+		     $("#"+未来之窗_layer_id+"_body").hide();
 
 		}
 
