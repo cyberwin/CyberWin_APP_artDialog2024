@@ -25,6 +25,7 @@
 //cyberwin_arg_input_0D3EB0CDBBA6A535543A5E7714DA67E6
 //2023-10-16 增减屏幕宽度初始化
 //2023-11-8 增加收缩窗口  fold
+//2023-11-11 默认关闭 切换收缩 canfold wlzc_dialog_swithbody
 ; !
 function() {
     
@@ -374,6 +375,8 @@ function() {
 		//2023-11-8
 		//fold
 		var  未来之窗_layer_fold = "N";//非折叠
+       //2023-11-11
+		var 未来之窗_layer_canfold = "N";////canfold 默认不可以收缩 
 
 		//未来之窗回调
 		var 未来之窗_layer_callback = function(){ 
@@ -441,6 +444,12 @@ function() {
 		//未来之窗_layer_fold
 		if(cyberwin_obj.fold){
 			未来之窗_layer_fold=cyberwin_obj.fold;
+		}
+
+		//2023-11-11 未来之窗 不可
+		//	var 未来之窗_layer_canfold = "N";////canfold 默认不可以收缩 
+		if(cyberwin_obj.canfold){
+			未来之窗_layer_canfold=cyberwin_obj.canfold;
 		}
 
 
@@ -571,7 +580,7 @@ function() {
 			 case 2:
 			{
 				 //右上角
-				 未来之窗_layer_alignmentstyle="top: 0 px;right: 0px;";
+				 未来之窗_layer_alignmentstyle="top: 0px;right: 0px;";
 			}
 				break;
 				case 3:
@@ -664,7 +673,7 @@ function() {
 
 
 		//2023-5-31
-			var 未来之窗元素_标题 = `<div class="set_top"><div class="set" style="cursor:move;`+未来之窗_layer_titlebar_captionstyle+`" onClick="wlzc_dialog_swithbody('`+未来之窗_layer_id+`');" >`+未来之窗_layer_title+"</div>"
+			var 未来之窗元素_标题 = `<div class="set_top"><div class="set" style="cursor:move;`+未来之窗_layer_titlebar_captionstyle+`" onClick="wlzc_dialog_swithbody('`+未来之窗_layer_id+`','`+未来之窗_layer_canfold+`');" >`+未来之窗_layer_title+"</div>"
 		    +wlzc_tool_bar_close_html
 				+"</div>";
 
@@ -812,7 +821,14 @@ window.onload = function(){
 
  //未来之窗 隐藏
  //2023-8-11 增加内容隐藏
-  function  wlzc_dialog_swithbody(obj_id){
+ // function  wlzc_dialog_swithbody(obj_id){
+	 //2023-11-11 默认关闭收缩
+  function  wlzc_dialog_swithbody(obj_id , 是否可收缩){
+
+	  if(是否可收缩 == "N"){
+		  return "忽略切换";
+	  }
+	  //未来之窗_layer_canfold
 	  //主体 obj_id+_body
 	  var 已经隐藏 = $("#"+obj_id).hasClass("cyberwin_dialog_hide_body_20230811");
 	 // $("#"+obj_id).hide();
